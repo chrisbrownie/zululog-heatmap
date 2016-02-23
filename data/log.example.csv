@@ -1,0 +1,7 @@
+Date,Model,Aircraft ID,Route,User ID,T/O,Day Ldgs,Ngt Ldgs,IAP,SE,ME,Complex,Turbine,Rotorcraft,Flt Sim,X/C,IMC,Sim Inst,Flt Time,Night,PIC,SIC,Dual Recd,Dual Given,Remarks
+21Feb2016,A152,VH-XXX,YMMB,"Smith, John",1,1,0,0,0.3,,,,,, ,0.0,0.0,0.3,,0.0,0.0,0.3,,
+06Feb2016,152,VH-XXX,YMEN,"Smith, John",9,9,0,0,1.0,,,,,, ,0.0,0.0,1.0,,1.0,0.0,,,Circuits
+17Jan2016,A152,VH-XXX,YMMB,"Smith, John",1,1,0,0,0.3,,,,,, ,0.0,0.0,0.3,,0.0,0.0,0.3,,
+07Jan2016,172P,VH-XXX,YLEG,"Smith, John",2,2,0,0,2.2,,,,,,2.2,0.0,0.0,2.2,,2.2,0.0,,,
+29Dec2015,172P,VH-XXX,YLTV YLIL,"Smith, John",1,1,0,0,1.2,,,,,, ,0.0,0.0,1.2,,1.2,0.0,,,
+24Dec2015,172P,VH-XXX,YMMB YMEN YMMB,"Smith, John",1,3,0,0,0.8,,,,,, ,0.0,0.0,0.8,,0.0,0.0,0.8,,

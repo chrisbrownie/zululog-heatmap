@@ -1,0 +1,6 @@
+<?php
+	// Get a key here: https://developers.google.com/maps/documentation/javascript/get-api-key
+	$_SESSION['gMapsApiKey'] = "";
+	
+?>
+	
