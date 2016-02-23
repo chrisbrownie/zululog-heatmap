@@ -1,8 +1,6 @@
 <?php
-
+include_once('includes/settings.php');
 include_once('includes/zululog.php');
-
-$gMapsApiKey = "AIzaSyBbn59Cgj-OrONk5BAdJQeP1gclpdsu8_Q";
 
 ?>
 <!DOCTYPE html>
@@ -74,7 +72,7 @@ function getPoints() {
 }
 
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php=$gMapsApiKey?>&signed_in=true&libraries=visualization&callback=initMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo($_SESSION['gMapsApiKey']);?>&signed_in=true&libraries=visualization&callback=initMap">
     </script>
   </body>
 </html>
