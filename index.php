@@ -62,11 +62,15 @@ function initMap() {
 function getPoints() {
   return [
 <?php
+      foreach (GetAllAerodromes($_SESSION['logEntries']) as $ad) {
+        print_r("      new google.maps.LatLng(".GetAdLatLong($ad)."),\n");
+      }
+      /*
       $ADs = GetAirportCounts();
       foreach (array_keys($ADs) as $ad) {
         $adLL = GetAdLatLong($ad);
         print_r("      new google.maps.LatLng(".$adLL."),\n");
-      }
+      }*/
     ?>
   ];
 }

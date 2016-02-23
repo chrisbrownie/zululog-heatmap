@@ -43,7 +43,6 @@ if (($handle = fopen($logFile, "r")) !== FALSE) {
   }
   fclose($handle);
 
-//  print_r($logEntries);
 }
 
 function GetAirportCounts() {
@@ -88,7 +87,44 @@ function GetAdLatLong($ad) {
 }
 
 
+ function strendswith($haystack, $needle) {
+    return $needle === "" || (($temp = strlen($haystack) - strlen($needle)) >= 0 && strpos($haystack, $needle, $temp) !== false);
+  }
 
 
+
+  // GetAerodromes returns an array of ADs visited by a particular flight.
+  // It uses the Remarks section to evaluate anything not stored in the Zululog flight plan
+  // as Zululog doesn't have all ALAs.
+  function GetAerodromes($flight) {
+    if (strlen($flight['Route']) == 4) {
+      // if the route is only one four character string, it was probably circuits or a local flight
+      return array($flight['Route']);
+    } else {
+      $ads = array();
+      // add the first element to the list
+      array_push($ads,explode(" ", $flight['Route'])[0]);
+      // add the last element to the list
+      array_push($ads,end(explode(" ", $flight['Route'])));
+      foreach (explode(" ", $flight['Remarks']) as $waypoint) {
+        // Split the route into bits
+        if (strendswith($waypoint,'/')) {
+          // If the waypoint ends with one or more slashes, it was a landing
+          array_push($ads,str_replace('/','',$waypoint));
+        }
+      }
+      return array_unique($ads);
+    }
+  }
+
+  function GetAllAerodromes($logEntries) {
+    $ads = array();
+    foreach ($logEntries as $flight) {
+      foreach (GetAerodromes($flight) as $ad) {
+        array_push($ads,$ad);
+      }
+    }
+    return array_unique($ads);
+  }
 ?>
 
